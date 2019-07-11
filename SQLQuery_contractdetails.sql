@@ -1,7 +1,7 @@
 select*from [postingsheet].[Contract_Hrs_South_cloud] 
 WITH(NOLOCK) WHERE cast (DutyDate as date) ='2019-06-06'AND 
   LocationAutoId IN (SELECT LocationAutoId FROM G4SOMSF.postingsheet.BranchDetails WITH(NOLOCK) WHERE HubID = 'KNT')
-  AND Flag <> 'D' and branchcode is not null
+  AND Flag <> 'D' 
 
 select*from ContractDetails with(nolock) 
 inner join So_Postdetails on So_Postdetails.SoautoId=ContractDetails.SoAutoId
